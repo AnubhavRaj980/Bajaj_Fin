@@ -1,7 +1,7 @@
 const express = require('express');
-const serverless = require("serverless-http");
+
 const bodyParser = require('body-parser');
-const router = express.Router();
+
 
 const app = express();
 const port = process.env.PORT || 3000;
@@ -42,11 +42,11 @@ app.get('/bfhl', (req, res) => {
   res.status(200).json({ operation_code: 1 });
 });
 
-app.use('/.netlify/functions/test', router);
+
 
 
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
 
-module.exports.handler = serverless(app);
+
